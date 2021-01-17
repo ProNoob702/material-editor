@@ -24,7 +24,7 @@
     "formik": "file:../node_modules/formik",
     "@material-ui/core": "file:../node_modules/@material-ui/core",
     "@material-ui/icons": "file:../node_modules/@material-ui/icons",
-    "material-editor": "file:.."
+    "react-material-editor": "file:.."
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"

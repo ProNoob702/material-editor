@@ -1,9 +1,9 @@
-import MaterialEditor from 'material-editor'
+import React from 'react'
 import { Button, makeStyles, Typography } from '@material-ui/core'
 import { EditorState } from 'draft-js'
 import { Field, Form, Formik } from 'formik'
-import React from 'react'
 import CheckIcon from '@material-ui/icons/Check'
+import MaterialEditor from 'react-material-editor'
 
 export const useAppStyles = makeStyles((theme) => ({
   root: {
