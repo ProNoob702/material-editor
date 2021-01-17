@@ -10,7 +10,7 @@ export const InlineStyleControls: React.FC<EditorToolbarProps> = ({
 }) => {
   const currentStyle = editorState.getCurrentInlineStyle()
   return (
-    <>
+    <React.Fragment>
       {getInlineControlsData().map((controlData) => (
         <ToolbarBtn
           key={controlData.label}
@@ -21,6 +21,6 @@ export const InlineStyleControls: React.FC<EditorToolbarProps> = ({
           classes={classes}
         />
       ))}
-    </>
+    </React.Fragment>
   )
 }

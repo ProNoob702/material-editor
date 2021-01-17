@@ -1,6 +1,4 @@
 import React from 'react'
-
-// Icons
 import FormatBoldIcon from '@material-ui/icons/FormatBold'
 import FormatItalicIcon from '@material-ui/icons/FormatItalic'
 import FormatUnderlinedIcon from '@material-ui/icons/FormatUnderlined'

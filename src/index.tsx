@@ -3,13 +3,12 @@ import { useGtxEditorStyles } from './editor.styles'
 import 'draft-js/dist/Draft.css'
 import { Editor, EditorState, RichUtils } from 'draft-js'
 import { Typography } from '@material-ui/core'
-import { EditorProps } from './models'
 import { EditorToolbar } from './editorToolbar.component'
+import { EditorProps } from './models'
 
 export const MaterialEditor: React.FC<EditorProps> = ({
   field,
-  form: { touched, errors, setFieldValue },
-  helperText,
+  form: { setFieldValue },
   editorLabel,
   placeholder,
   customClasses

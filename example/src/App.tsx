@@ -1,10 +1,8 @@
 import React from 'react'
-
-import { ExampleComponent } from 'material-editor'
-import 'material-editor/dist/index.css'
+import { MaterialEditor } from 'material-editor'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <MaterialEditor />
 }
 
 export default App

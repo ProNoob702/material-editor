@@ -27,7 +27,7 @@ export const BlockStyleControls: React.FC<EditorToolbarProps> = ({
     .getType()
 
   return (
-    <>
+    <React.Fragment>
       <SelectControl
         currentBlockType={blockType}
         onChange={toggleBlockType}
@@ -45,6 +45,6 @@ export const BlockStyleControls: React.FC<EditorToolbarProps> = ({
           classes={classes}
         />
       ))}
-    </>
+    </React.Fragment>
   )
 }

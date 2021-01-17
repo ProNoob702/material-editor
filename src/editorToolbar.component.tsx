@@ -5,9 +5,9 @@ import { InlineStyleControls } from './toolbar-controls/inlineStyling.component'
 
 export const EditorToolbar: React.FC<EditorToolbarProps> = (props) => {
   return (
-    <>
+    <React.Fragment>
       <InlineStyleControls {...props} />
       <BlockStyleControls {...props} />
-    </>
+    </React.Fragment>
   )
 }
