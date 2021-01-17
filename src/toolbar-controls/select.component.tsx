@@ -1,9 +1,9 @@
 import React from 'react'
-import { EditorStyles } from '../toolbar.component'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
+import { EditorStyles } from '../models'
 
 interface ISelectControl {
   currentBlockType: string

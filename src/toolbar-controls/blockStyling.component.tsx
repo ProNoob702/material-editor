@@ -3,9 +3,9 @@ import { ToolbarBtn } from './btn.component'
 import {
   getExtraBlockControlsData,
   getTxtBlockControlsData
-} from '../gtxEditor.data'
+} from '../editor.data'
 import { SelectControl } from './select.component'
-import { EditorToolbarProps } from '../toolbar.component'
+import { EditorToolbarProps } from '../models'
 
 const txtBlockControlsOptions = [
   {

@@ -10,6 +10,7 @@ import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered'
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted'
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote'
 import CodeIcon from '@material-ui/icons/Code'
+import { ControlsNames, GTXEditorControlData } from './models'
 
 export const getControlDataByName = (
   controlName: ControlsNames
@@ -28,41 +29,6 @@ export const getTxtBlockControlsData = (): GTXEditorControlData[] => {
 export const getExtraBlockControlsData = (): GTXEditorControlData[] => {
   return Object.values(extraBlockTypeControlsData) as GTXEditorControlData[]
 }
-
-export interface GTXEditorControlData {
-  id?: string
-  name: string
-  label: string
-  style: string
-  icon?: React.ReactNode
-  component?: React.ReactNode
-  type: 'inline' | 'block' | 'callback'
-  active?: boolean
-  clickFnName?: string
-}
-
-export type ControlsNames =
-  | 'H1'
-  | 'H2'
-  | 'H3'
-  | 'H4'
-  | 'H5'
-  | 'H6'
-  | 'bold'
-  | 'italic'
-  | 'underline'
-  | 'link'
-  | 'numberList'
-  | 'bulletList'
-  | 'quote'
-  | 'code'
-  | 'clear'
-  | 'save'
-  | 'media'
-  | 'strikethrough'
-  | 'highlight'
-  | 'undo'
-  | 'redo'
 
 const inlineStyleControls: Partial<
   Record<ControlsNames, GTXEditorControlData>

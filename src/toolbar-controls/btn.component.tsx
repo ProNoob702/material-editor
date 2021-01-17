@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, IconButton } from '@material-ui/core'
-import { EditorStyles } from '../toolbar.component'
+import { EditorStyles } from '../models'
 
 interface ToolbarBtnProps {
   active: boolean

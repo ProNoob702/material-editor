@@ -1,7 +1,7 @@
 import React from 'react'
 import { ToolbarBtn } from './btn.component'
-import { getInlineControlsData } from '../gtxEditor.data'
-import { EditorToolbarProps } from '../toolbar.component'
+import { getInlineControlsData } from '../editor.data'
+import { EditorToolbarProps } from '../models'
 
 export const InlineStyleControls: React.FC<EditorToolbarProps> = ({
   editorState,
