@@ -6,13 +6,14 @@ import { Typography } from '@material-ui/core'
 import { EditorToolbar } from './editorToolbar.component'
 import { EditorProps } from './models'
 
-export const MaterialEditor: React.FC<EditorProps> = ({
-  field,
-  form: { setFieldValue },
-  editorLabel,
-  placeholder,
-  customClasses
-}) => {
+export default function MaterialEditor(props: EditorProps) {
+  const {
+    field,
+    form: { setFieldValue },
+    editorLabel,
+    placeholder,
+    customClasses
+  } = props
   const defaultClasses = useGtxEditorStyles()
   const classes = customClasses || defaultClasses
   //   const fieldError = getIn(errors, field.name);
