@@ -7,7 +7,7 @@ export type EditorStyles = ReturnType<typeof useGtxEditorStyles>
 export interface EditorProps extends FieldProps<any> {
   helperText: string
   editorLabel: string
-  placeholder: string
+  shrink?: boolean
   customClasses: EditorStyles
 }
 

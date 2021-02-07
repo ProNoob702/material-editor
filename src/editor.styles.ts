@@ -27,6 +27,9 @@ export const useGtxEditorStyles = makeStyles(
         transform: 'translateY(-50%) scale(.9)',
         backgroundColor: 'white',
         color: palette.primary.dark
+      },
+      '&:focus-within $editorLabelUp': {
+        color: palette.primary.dark
       }
     },
     toolbar: {
@@ -56,6 +59,19 @@ export const useGtxEditorStyles = makeStyles(
       }),
       transformOrigin: 'left top',
       pointerEvents: 'none'
+    },
+    editorLabelUp: {
+      position: 'absolute',
+      left: '8px',
+      padding: '0 0.3rem',
+      margin: '0 0.5rem',
+      fontSize: '12px',
+      color: palette.text.secondary,
+      transformOrigin: 'left top',
+      pointerEvents: 'none',
+      top: 0,
+      transform: 'translateY(-50%) scale(.9)',
+      backgroundColor: 'white'
     },
     flexColumn: {
       display: 'flex',

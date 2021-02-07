@@ -11,8 +11,8 @@ export default function MaterialEditor(props: EditorProps) {
     field,
     form: { setFieldValue },
     editorLabel,
-    // placeholder,
-    customClasses
+    customClasses,
+    shrink
   } = props
   const defaultClasses = useGtxEditorStyles()
   const classes = customClasses || defaultClasses
@@ -31,7 +31,7 @@ export default function MaterialEditor(props: EditorProps) {
   return (
     <div className={classes.EditorContainer}>
       <Typography
-        className={classes.editorLabel}
+        className={shrink ? classes.editorLabelUp : classes.editorLabel}
         variant='caption'
         gutterBottom
       >
@@ -49,7 +49,6 @@ export default function MaterialEditor(props: EditorProps) {
         <Editor
           editorState={editorState}
           onChange={(nEditorState) => setFieldValue(field.name, nEditorState)}
-          // placeholder={placeholder}
         />
       </div>
     </div>
