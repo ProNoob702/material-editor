@@ -2,37 +2,32 @@ import { makeStyles } from '@material-ui/core/styles'
 import grey from '@material-ui/core/colors/grey'
 
 export const useGtxEditorStyles = makeStyles(
-  ({ spacing, transitions, palette }) => ({
+  ({ spacing, palette, transitions }) => ({
     root: {},
     EditorContainer: {
       position: 'relative',
       border: `1px solid ${grey[300]}`,
       borderRadius: 5,
-      transition: transitions.create(['border-color', 'height'], {
-        easing: transitions.easing.sharp,
+      transition: transitions.create(['all'], {
+        easing: transitions.easing.easeInOut,
         duration: transitions.duration.leavingScreen
       }),
       boxSizing: 'border-box',
       '&:hover': {
         border: '1px solid rgba(0, 0, 0, 0.87)'
       },
+      '&:focus $editorLabel': {
+        border: '1px solid rgba(0, 0, 0, 0.87)'
+      },
       '&:focus-within': {
         border: `2px solid ${palette.primary.dark}`
       },
       '&:focus-within $editorLabel': {
+        top: 0,
+        transform: 'translateY(-50%) scale(.9)',
+        backgroundColor: 'white',
         color: palette.primary.dark
       }
-    },
-    editorLabel: {
-      position: 'absolute',
-      background: 'white',
-      transform: 'translateY(-50%)',
-      top: 0,
-      left: '8px',
-      padding: '0 0.3rem',
-      margin: '0 0.5rem',
-      fontSize: '12px',
-      color: palette.text.secondary
     },
     toolbar: {
       display: 'flex',
@@ -46,6 +41,21 @@ export const useGtxEditorStyles = makeStyles(
       height: '200px',
       maxHeight: '200px',
       overflow: 'auto'
+    },
+    editorLabel: {
+      position: 'absolute',
+      left: '8px',
+      padding: '0 0.3rem',
+      margin: '0 0.5rem',
+      fontSize: '12px',
+      color: palette.text.secondary,
+      top: '29%',
+      transition: transitions.create(['all'], {
+        duration: transitions.duration.short,
+        easing: transitions.easing.easeIn
+      }),
+      transformOrigin: 'left top',
+      pointerEvents: 'none'
     },
     flexColumn: {
       display: 'flex',

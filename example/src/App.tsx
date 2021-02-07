@@ -59,4 +59,22 @@ function App() {
   )
 }
 
+export const useBasicMaterialFieldStyles = makeStyles(() => ({
+  root: {
+    position: 'relative'
+  },
+  floatingLabel: {}
+}))
+
+// const BasicMaterialField: React.FC<{ label: string }> = ({ label }) => {
+//   const classes = useBasicMaterialFieldStyles()
+//   return (
+//     <div className={classes.root}>
+//       <Typography variant='caption' className={classes.floatingLabel}>
+//         {label}
+//       </Typography>
+//     </div>
+//   )
+// }
+
 export default App

@@ -11,7 +11,7 @@ export default function MaterialEditor(props: EditorProps) {
     field,
     form: { setFieldValue },
     editorLabel,
-    placeholder,
+    // placeholder,
     customClasses
   } = props
   const defaultClasses = useGtxEditorStyles()
@@ -49,7 +49,7 @@ export default function MaterialEditor(props: EditorProps) {
         <Editor
           editorState={editorState}
           onChange={(nEditorState) => setFieldValue(field.name, nEditorState)}
-          placeholder={placeholder}
+          // placeholder={placeholder}
         />
       </div>
     </div>
