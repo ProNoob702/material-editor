@@ -42,6 +42,7 @@ function App() {
               name='productEditor'
               editorLabel='GTX Editor'
               placeholder='Enter Infos'
+              shrink
             />
             <div className={classes.confirmZone}>
               <Button

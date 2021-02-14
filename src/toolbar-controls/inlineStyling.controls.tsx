@@ -1,5 +1,5 @@
 import React from 'react'
-import { ToolbarBtn } from './btn.component'
+import { ToolbarBtn } from './basic.controls'
 import { getInlineControlsData } from '../editor.data'
 import { EditorToolbarProps } from '../models'
 

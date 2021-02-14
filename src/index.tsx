@@ -12,12 +12,11 @@ export default function MaterialEditor(props: EditorProps) {
     form: { setFieldValue },
     editorLabel,
     customClasses,
-    shrink
+    shrink,
+    outlined
   } = props
   const defaultClasses = useGtxEditorStyles()
   const classes = customClasses || defaultClasses
-  //   const fieldError = getIn(errors, field.name);
-  //   const showError = getIn(touched, field.name) && !!fieldError;
   const editorState = field.value
   const toggleInlineStyle = (inlineStyle: string) => {
     onChange(RichUtils.toggleInlineStyle(editorState, inlineStyle))
@@ -28,6 +27,7 @@ export default function MaterialEditor(props: EditorProps) {
   const onChange = (nEditorState: EditorState) => {
     setFieldValue(field.name, nEditorState)
   }
+  const onNewMedia = () => {}
   return (
     <div className={classes.EditorContainer}>
       <Typography
@@ -42,7 +42,10 @@ export default function MaterialEditor(props: EditorProps) {
           editorState={editorState}
           toggleInlineStyle={toggleInlineStyle}
           toggleBlockType={toggleBlockType}
+          onNewMedia={onNewMedia}
           classes={classes}
+          shrink={shrink || true}
+          outlined={outlined || true}
         />
       </div>
       <div className={classes.editor}>
@@ -54,3 +57,5 @@ export default function MaterialEditor(props: EditorProps) {
     </div>
   )
 }
+//   const fieldError = getIn(errors, field.name);
+//   const showError = getIn(touched, field.name) && !!fieldError;

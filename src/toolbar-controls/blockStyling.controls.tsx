@@ -1,12 +1,11 @@
 import React from 'react'
-import { ToolbarBtn } from './btn.component'
 import {
   getExtraBlockControlsData,
   getTxtBlockControlsData
 } from '../editor.data'
-import { SelectControl } from './select.component'
 import { EditorToolbarProps } from '../models'
-
+import { ToolbarBtn, ToolbarDropDown } from './basic.controls'
+import TextFieldsIcon from '@material-ui/icons/TextFields'
 const txtBlockControlsOptions = [
   {
     label: 'Normal',
@@ -28,13 +27,15 @@ export const BlockStyleControls: React.FC<EditorToolbarProps> = ({
 
   return (
     <React.Fragment>
-      <SelectControl
+      {/* Title Control */}
+      <ToolbarDropDown
         currentBlockType={blockType}
         onChange={toggleBlockType}
         options={txtBlockControlsOptions}
         classes={classes}
-        label='Title'
+        icon={<TextFieldsIcon />}
       />
+      {/* Other controls */}
       {getExtraBlockControlsData().map((controlData) => (
         <ToolbarBtn
           key={controlData.label}

@@ -1,18 +1,19 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import grey from '@material-ui/core/colors/grey'
 
-export const useGtxEditorStyles = makeStyles(
-  ({ spacing, palette, transitions }) => ({
+export const useGtxEditorStyles = makeStyles((theme) => {
+  const { palette, transitions } = theme
+  return {
     root: {},
     EditorContainer: {
       position: 'relative',
       border: `1px solid ${grey[300]}`,
-      borderRadius: 5,
-      transition: transitions.create(['all'], {
-        easing: transitions.easing.easeInOut,
-        duration: transitions.duration.leavingScreen
+      borderRadius: 4,
+      transition: transitions.create(['border'], {
+        easing: transitions.easing.sharp,
+        duration: transitions.duration.shortest
       }),
-      boxSizing: 'border-box',
+      boxSizing: 'content-box',
       '&:hover': {
         border: '1px solid rgba(0, 0, 0, 0.87)'
       },
@@ -32,13 +33,29 @@ export const useGtxEditorStyles = makeStyles(
         color: palette.primary.dark
       }
     },
+    ...toolbarStyles(theme),
+    ...editorStyles(theme),
+    ...MixStyles(theme)
+  }
+})
+
+const toolbarStyles = (theme: Theme) =>
+  createStyles({
     toolbar: {
       display: 'flex',
-      padding: spacing(2, 1)
+      padding: theme.spacing(1)
+      // borderBottom: `1px solid ${grey[300]}`
     },
     toolbarControl: {
-      margin: spacing(0, 0.5)
+      margin: theme.spacing(0, 0.5)
     },
+    selectedToolbarMenuItem: {
+      background: theme.palette.action.hover
+    }
+  })
+
+const editorStyles = (theme: Theme) =>
+  createStyles({
     editor: {
       padding: '0px 14px',
       height: '200px',
@@ -51,11 +68,11 @@ export const useGtxEditorStyles = makeStyles(
       padding: '0 0.3rem',
       margin: '0 0.5rem',
       fontSize: '12px',
-      color: palette.text.secondary,
+      color: theme.palette.text.secondary,
       top: '29%',
-      transition: transitions.create(['all'], {
-        duration: transitions.duration.short,
-        easing: transitions.easing.easeIn
+      transition: theme.transitions.create(['all'], {
+        duration: theme.transitions.duration.short,
+        easing: theme.transitions.easing.easeIn
       }),
       transformOrigin: 'left top',
       pointerEvents: 'none'
@@ -66,13 +83,17 @@ export const useGtxEditorStyles = makeStyles(
       padding: '0 0.3rem',
       margin: '0 0.5rem',
       fontSize: '12px',
-      color: palette.text.secondary,
+      color: theme.palette.text.secondary,
       transformOrigin: 'left top',
       pointerEvents: 'none',
       top: 0,
       transform: 'translateY(-50%) scale(.9)',
       backgroundColor: 'white'
-    },
+    }
+  })
+
+const MixStyles = (_: Theme) =>
+  createStyles({
     flexColumn: {
       display: 'flex',
       flexDirection: 'column'
@@ -82,11 +103,13 @@ export const useGtxEditorStyles = makeStyles(
       flexDirection: 'column',
       alignItems: 'center'
     },
+    flexRow: {
+      display: 'flex'
+    },
+    fill: {
+      flexGrow: 1
+    },
     error: {
       borderBottom: '2px solid red'
-    },
-    hidePlaceholder: {
-      display: 'none'
     }
   })
-)

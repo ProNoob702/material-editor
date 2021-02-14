@@ -9,13 +9,17 @@ export interface EditorProps extends FieldProps<any> {
   editorLabel: string
   shrink?: boolean
   customClasses: EditorStyles
+  outlined?: boolean
 }
 
 export interface EditorToolbarProps {
   editorState: EditorState
   toggleInlineStyle: (newStyle: string) => void
   toggleBlockType: (newBlockType: string) => void
+  onNewMedia: (data: PickedMediaData) => void
   classes: EditorStyles
+  shrink?: boolean
+  outlined?: boolean
 }
 
 export interface GTXEditorControlData {
@@ -52,3 +56,8 @@ export type ControlsNames =
   | 'highlight'
   | 'undo'
   | 'redo'
+
+export interface PickedMediaData {
+  url?: string
+  alignment?: 'left' | 'center' | 'right'
+}
